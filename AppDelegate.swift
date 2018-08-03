@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  Recky
+//  RecTest
 //
-//  Created by Samina Abdullah on 7/23/18.
-//  Copyright © 2018 Samina Abdullah. All rights reserved.
+//  Created by Julia Sheth on 7/23/18.
+//  Copyright © 2018 InternHack. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "isFirstTime") == nil {
+            defaults.set("No", forKey:"isFirstTime")
+            defaults.synchronize()
+            defaults.synchronize()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Write your storyboard name
+            let viewController = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! ViewController
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 
@@ -43,4 +55,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
