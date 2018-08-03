@@ -11,6 +11,7 @@ import CoreData
 
 class MyRecTableViewController: UITableViewController {
 
+    @IBOutlet weak var myRecommendationItem: UINavigationItem!
     // MARK: - Properties
     
     var resultsController: NSFetchedResultsController<Recommendation>!

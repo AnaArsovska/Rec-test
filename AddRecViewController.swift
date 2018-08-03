@@ -26,8 +26,10 @@ class AddRecViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        doneButton.layer.borderWidth = 2
+        doneButton.layer.borderColor = UIColor(red: 155/255, green: 0/255, blue: 130/225, alpha: 1).cgColor
         // Do any additional setup after loading the view.
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(with:)),
                                                name: .UIKeyboardWillShow,
@@ -110,6 +112,7 @@ class AddRecViewController: UIViewController {
 }
 
 extension AddRecViewController: UITextViewDelegate {
+    
     func textViewDidChangeSelection(_ name: UITextView) {
         if doneButton.isHidden{
             name.text.removeAll()

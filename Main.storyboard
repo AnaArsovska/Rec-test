@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,7 +66,7 @@
                             <outlet property="delegate" destination="ect-bL-jta" id="sak-kK-gZP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Recommendations" id="rSD-3T-fWk">
+                    <navigationItem key="navigationItem" title="My Recommendations" leftItemsSupplementBackButton="YES" id="rSD-3T-fWk">
                         <barButtonItem key="rightBarButtonItem" image="plusCircle" id="60U-Mv-xjX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -75,6 +74,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myRecommendationItem" destination="rSD-3T-fWk" id="bAi-aa-DyM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwV-cf-luN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,13 +100,13 @@
                                             <constraint firstAttribute="height" constant="30" id="Yfm-rd-pqH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" red="0.88957028579999997" green="0.3598730611" blue="0.26904617310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.64833670854568481" green="0.15142455697059631" blue="0.72629135847091675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="245" text="Name of your recommendation..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-4r-rcZ" userLabel="name">
                                         <rect key="frame" x="0.0" y="40" width="343" height="108.5"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" red="0.88957028579999997" green="0.3598730611" blue="0.26904617310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.64833670854568481" green="0.15142455697059631" blue="0.72629135847091675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
@@ -114,7 +116,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="240" text="Location:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OgL-tr-Vc2" userLabel="location">
                                         <rect key="frame" x="0.0" y="158.5" width="343" height="108.5"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" red="0.88957028579999997" green="0.3598730611" blue="0.26904617310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.64833670854568481" green="0.15142455697059631" blue="0.72629135847091675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
@@ -131,9 +133,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvI-YY-Nzc">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <color key="backgroundColor" red="0.88957028579999997" green="0.3598730611" blue="0.26904617310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.64833670854568481" green="0.15142455697059631" blue="0.72629135847091675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="wJE-8q-rkP"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="wJE-8q-rkP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Cancel">
@@ -148,12 +150,12 @@
                                             <action selector="cancel:" destination="wbc-ES-eo6" eventType="touchUpInside" id="Rev-5Q-3bp"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caM-CL-Dex">
+                                    <button hidden="YES" opaque="NO" contentMode="center" horizontalHuggingPriority="245" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caM-CL-Dex">
                                         <rect key="frame" x="-16" y="0.0" width="0.0" height="30"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Done">
-                                            <color key="titleColor" red="0.88957028579999997" green="0.3598730611" blue="0.26904617310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.64833670854568481" green="0.15142455697059631" blue="0.72629135847091675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -174,7 +176,7 @@
                             <constraint firstItem="zDc-R4-DXh" firstAttribute="top" secondItem="cDu-NA-oNg" secondAttribute="top" id="ICv-wl-CQv"/>
                             <constraint firstItem="cDu-NA-oNg" firstAttribute="trailing" secondItem="zDc-R4-DXh" secondAttribute="trailing" constant="16" id="TET-D0-adx"/>
                             <constraint firstItem="LMg-Mj-48i" firstAttribute="leading" secondItem="cDu-NA-oNg" secondAttribute="leading" constant="16" id="dSK-82-M1R"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="LMg-Mj-48i" secondAttribute="bottom" id="f2i-ft-Noy"/>
+                            <constraint firstAttribute="bottom" secondItem="LMg-Mj-48i" secondAttribute="bottom" id="f2i-ft-Noy"/>
                             <constraint firstItem="cDu-NA-oNg" firstAttribute="trailing" secondItem="LMg-Mj-48i" secondAttribute="trailing" constant="16" id="mv3-ud-li3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cDu-NA-oNg"/>
@@ -218,11 +220,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pvH-79-DDt">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.88957028582616504" green="0.35987306108537931" blue="0.26904617310181367" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.64833670854568481" green="0.15142455697059631" blue="0.72629135847091675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
